@@ -4,4 +4,4 @@
 [{{ session.title }}]( {{ session.url | relative_url }})
 {% endfor %}
 
-[homepage] (https://proagileab.github.io/short-learning-sessions/)
+[homepage](https://proagileab.github.io/short-learning-sessions/)
