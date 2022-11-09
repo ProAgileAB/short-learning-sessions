@@ -1,3 +1,10 @@
 collections:
   sessions:
     output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: sessions
+    values:
+      layout: session
