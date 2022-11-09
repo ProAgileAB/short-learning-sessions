@@ -1,3 +1,5 @@
 collections:
   sessions:
     output: true
+
+baseurl: short-learning-sessions
