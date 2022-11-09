@@ -2,4 +2,4 @@ collections:
   sessions:
     output: true
 
-baseurl: short-learning-sessions
+baseurl: "short-learning-sessions"
