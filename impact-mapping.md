@@ -13,6 +13,8 @@ _I Scrum har vi ju en produktbacklog som ska vara till för att fokusera på det
 
 _Det är svårt och arbetskrävande att hålla en så lång PBL ordnad. Dessutom har de oftast features i sig, eller stories, och de brukar vara lite oklart kopplade till effekter._
 
+![An example of a impact map](impact-mapping.png)
+
 _Jag ska visa ett bättre alternativ nu, nämligen impact mapping. Där börjar man med fokus på effekten. Gör man det kan man i regel alltid lösa det inom den budget man har!_
 
 Rita de olika nivåerna och berätta. 
