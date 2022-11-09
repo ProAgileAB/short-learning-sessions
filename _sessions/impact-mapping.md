@@ -1,5 +1,4 @@
 ---
-layout: session
 title: Impact Mapping
 ---
 # Impact Mapping
