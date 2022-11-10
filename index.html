@@ -1,0 +1,18 @@
+
+<ul>
+{% for session in site.sessions %}
+    <li><a href="{{ session.url | relative_url }}">{{ session.title }}</a></li>
+{% endfor %}
+</ul>
+Send pull requests on our <a href="https://github.com/ProAgileAB/short-learning-sessions">github page</a>
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+<script lang="javascript">
+    let sessions = [
+        {% for session in site.sessions %}
+            {{ session | jsonify }},
+        {% endfor %}
+    ];
+    let fuse = Fuse(sessions, ["title", "content"]);
+    console.log(fuse.search("värde"))
+</script>
