@@ -24,7 +24,7 @@ Send pull requests on our <a href="https://github.com/ProAgileAB/short-learning-
         "{{session.title}}": "{{session.title | slugify}}",
         {% endfor %}
     }
-    let fuse = new Fuse(sessions, ["title", "content"]);
+    let fuse = new Fuse(sessions, {keys: ["title", "content"]});
     function search(e) {
         let result = fuse.search(e.target.value);
         console.log(result)
