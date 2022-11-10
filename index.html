@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<input id="search" placeholder="filter" type="text" onchange="search"/>
+<input id="search" placeholder="filter" type="text"/>
 
 <ul>
 {% for session in site.sessions %}
@@ -29,7 +29,7 @@ Send pull requests on our <a href="https://github.com/ProAgileAB/short-learning-
         let result = fuse.search(e.target.value);
         console.log(result)
         let toShow = result.map(r => r.title)
-        document.getElementsByClassName("session-item").array.forEach(element => {
+        document.getElementsByClassName("session-item").forEach(element => {
             if (toShow.includes[map[element.id]]) {
                 element.style = ""
             } else {
@@ -37,4 +37,5 @@ Send pull requests on our <a href="https://github.com/ProAgileAB/short-learning-
             }
         });
     }
+    document.getElementById("search").addEventListener('change', search)
 </script>
