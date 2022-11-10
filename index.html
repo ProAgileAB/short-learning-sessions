@@ -1,7 +1,11 @@
+---
+layout: default
+---
+<input id="search" placeholder="filter" type="text" onchange="search"/>
 
 <ul>
 {% for session in site.sessions %}
-    <li><a href="{{ session.url | relative_url }}">{{ session.title }}</a></li>
+    <li id="{{session.title | slugify}}" class="session-item"><a href="{{ session.url | relative_url }}">{{ session.title }}</a></li>
 {% endfor %}
 </ul>
 Send pull requests on our <a href="https://github.com/ProAgileAB/short-learning-sessions">github page</a>
@@ -13,6 +17,17 @@ Send pull requests on our <a href="https://github.com/ProAgileAB/short-learning-
             {{ session | jsonify }},
         {% endfor %}
     ];
+    let map = {
+        {% for session in site.sessions %}
+        "{{session.title}}": "{{session.title | slugify}}",
+        {% endfor %}
+    }
     let fuse = Fuse(sessions, ["title", "content"]);
-    console.log(fuse.search("värde"))
+    function search(e) {
+        console.log(fuse.search(e.target.value))
+        /*document.getElementsByClassName("session-item").array.forEach(element => {
+            if (element.id)
+            element.style = "display: none;"
+        });*/
+    }
 </script>
