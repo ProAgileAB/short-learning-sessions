@@ -28,7 +28,7 @@ Send pull requests on our <a href="https://github.com/ProAgileAB/short-learning-
     function search(e) {
         let result = fuse.search(e.target.value);
         console.log(result)
-        let toShow = result.map(r => r.title)
+        let toShow = result.map(r => r.item.title)
         document.querySelectorAll(".session-item").forEach(element => {
             if (toShow.includes[map[element.id]]) {
                 element.style = ""
