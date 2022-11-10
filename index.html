@@ -26,7 +26,8 @@ Send pull requests on our <a href="https://github.com/ProAgileAB/short-learning-
     }
     let fuse = new Fuse(sessions, {keys: ["title", "content"]});
     function search(e) {
-        let result = fuse.search(e.target.value);
+        let value = e.target.value;
+        let result = fuse.search(value);
         console.log(result)
         let toShow = result.map(r => r.item.title)
         document.querySelectorAll(".session-item").forEach(element => {
