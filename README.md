@@ -1,7 +1,5 @@
 # Short Learning Sessions
 
-{% for session in site.sessions %}
- * [{{ session.title }}]( {{ session.url | relative_url }})
-{% endfor %}
+Add new sessions in the `_sessions`, changes will automaticaly be published when merged to main.
 
 [homepage](https://proagileab.github.io/short-learning-sessions/)
