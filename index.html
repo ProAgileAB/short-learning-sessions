@@ -5,7 +5,7 @@ layout: default
 
 <ul>
 {% for session in site.sessions %}
-    <li id="{{session.title | slugify}}" class="session-item"><a href="{{ session.url | relative_url }}">{{ session.title }}</a></li>
+    <li id="{{session.title | slugify}}" class="session-item"><p><a href="{{ session.url | relative_url }}">{{ session.title }}</a></p></li>
 {% endfor %}
 </ul>
 Send pull requests on our <a href="https://github.com/ProAgileAB/short-learning-sessions">github page</a>
@@ -14,7 +14,9 @@ Send pull requests on our <a href="https://github.com/ProAgileAB/short-learning-
 <script lang="javascript">
     let sessions = [
         {% for session in site.sessions %}
-            {{ session | jsonify }},
+            { "title": {{ session.title | jsonify }} 
+            , "content": {{ session.content | escape | jsonify }} 
+            },
         {% endfor %}
     ];
     let map = {
@@ -24,10 +26,15 @@ Send pull requests on our <a href="https://github.com/ProAgileAB/short-learning-
     }
     let fuse = Fuse(sessions, ["title", "content"]);
     function search(e) {
-        console.log(fuse.search(e.target.value))
-        /*document.getElementsByClassName("session-item").array.forEach(element => {
-            if (element.id)
-            element.style = "display: none;"
-        });*/
+        let result = fuse.search(e.target.value);
+        console.log(result)
+        let toShow = result.map(r => r.title)
+        document.getElementsByClassName("session-item").array.forEach(element => {
+            if (toShow.includes[map[element.id]]) {
+                element.style = ""
+            } else {
+                element.style = "display: none;"
+            }
+        });
     }
 </script>
