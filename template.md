@@ -4,7 +4,7 @@ title: Template
 
 # Template
 
-![alt text](path_to_image.png)
+![describe the image here](path_to_image.png)
 
 ## Source
 
