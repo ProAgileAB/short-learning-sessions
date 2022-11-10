@@ -19,9 +19,9 @@ Send pull requests on our <a href="https://github.com/ProAgileAB/short-learning-
             },
         {% endfor %}
     ];
-    let map = {
+    let mapFromIdToTitle = {
         {% for session in site.sessions %}
-        "{{session.title}}": "{{session.title | slugify}}",
+        "{{session.title | slugify}}": "{{session.title}}",
         {% endfor %}
     }
     let fuse = new Fuse(sessions, {keys: ["title", "content"]});
@@ -30,7 +30,7 @@ Send pull requests on our <a href="https://github.com/ProAgileAB/short-learning-
         console.log(result)
         let toShow = result.map(r => r.item.title)
         document.querySelectorAll(".session-item").forEach(element => {
-            if (toShow.includes[map[element.id]]) {
+            if (toShow.includes[mapFromIdToTitle[element.id]]) {
                 element.style = ""
             } else {
                 element.style = "display: none;"
